@@ -164,6 +164,30 @@ function onSubmit(e){
         coughSelect.focus();
         return false;
     }
+    else if(coughSelect.value=="No" && sneezeSelect.value=="No" && painSelect.value=="No"
+    && weakSelect.value=="No" && feverSelect.value=="Yes" && breathSelect.value=="Yes"){
+        message.classList.add(".message");
+        message.innerHTML="YOU DO NOT HAVE THE COVID19. ADVICE YOU SEE MEDICAL ADVICE FOR OTHER SYMPTOMS ONLY "
+        setTimeout(()=>message.remove(), 10000);
+        coughSelect.focus();
+        return false;
+    }
+    else if(coughSelect.value=="Yes" && sneezeSelect.value=="No" && painSelect.value=="No"
+    && weakSelect.value=="Yes" && feverSelect.value=="Yes" && breathSelect.value=="Yes"){
+        message.classList.add(".message");
+        message.innerHTML="YOU DO NOT HAVE THE COVID19. ADVICE YOU SEE MEDICAL ADVICE FOR OTHER SYMPTOMS ONLY "
+        setTimeout(()=>message.remove(), 10000);
+        coughSelect.focus();
+        return false;
+    }
+    else if (!(coughSelect.value=="No" && sneezeSelect.value=="No" && painSelect.value=="No"
+    && weakSelect.value=="Yes" && feverSelect.value=="Yes" && breathSelect.value=="Yes")){
+        message.classList.add(".message");
+        message.innerHTML="YOU DO NOT HAVE THE COVID19. ADVICE YOU SEE MEDICAL ADVICE FOR OTHER SYMPTOMS ONLY "
+        setTimeout(()=>message.remove(), 10000);
+        coughSelect.focus();
+        return false;
+    }
 
     else if((coughSelect.value=="No" && sneezeSelect.value=="No") && (painSelect.value=="No"
     && weakSelect.value=="No" )&& (feverSelect.value=="No" && breathSelect.value=="No")){
